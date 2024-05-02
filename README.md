@@ -1,12 +1,11 @@
 # Vendor Management System
-This project is a Vendor Management System developed using Django.
+This project is a Vendor Management System developed using Django REST Framework.
 
 # Setup Instructions
 Follow these steps to set up the project locally:
 Clone the repository to your local machine:
 git clone <repository_url>
-vendor-management-system-django
-Develop a Vendor Management System using Django and Django REST Framework. 
+vendor-management-system-django 
 This system will handle vendor profiles, track purchase orders, and calculate vendor performance metrics
 
 # Prerequisites
@@ -31,27 +30,30 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 
-# Usage
+# Usage:
 1.Start the server:
 python manage.py runserver
 
 # 2.Access API endpoints:
-Vendor API: /vendor/
 
-Purchase Order API: /purchase-order/
+Rigister API: api/register/
 
-Historical Performance API: /vendor/historical_performance
+Vendor API: api/vendors/
 
-# After creating user to access token
-'/gettoken/' #provide username and password in json eg. { "username":"superuser","password":"superuser" }
+Purchase Order API:  api/purchase-orders/
 
+Vendors Performance API: api/vendors_performance
+
+# After creating user to access token:
 I used Postman to test API
 
-once Token is created or received provide it to HEADER
+'api-token-auth/ ' # provide username and password in json eg. { "username":"superuser","password":"password" }
 
-with key as Authorization (eg. key : Authorization) and value as token
+once Token is created or received, provide it to HEADER 
 
-# API Endpoints
+with key as Authorization (eg. key : Authorization) and value as Token <token_id>
+
+# API Endpoints:
 Vendor API
 ● POST /api/vendors/: Create a new vendor.
 
@@ -63,9 +65,9 @@ Vendor API
 
 ● DELETE /api/vendors/{vendor_id}/: Delete a vendor
 
-● Vendor Performance Endpoint (GET /api/vendors/{vendor_id}/performance)
+● Vendor Performance Endpoint (GET /api/vendors/performance/{vendor_id})
 
-# Purchase Order API
+# Purchase Order API:
 ● POST /api/purchase_orders/: Create a purchase order.
 
 ● GET /api/purchase_orders/: List all purchase orders with an option to filter by vendor.
@@ -76,20 +78,20 @@ Vendor API
 
 ● DELETE /api/purchase_orders/{po_id}/: Delete a purchase order
 
-# Vendor Performance Evaluation
-● GET /api/vendors/{vendor_id}/performance: Retrieve a vendor's performance metrics
+# Vendor Performance API:
+● GET /api/vendors_performance/{vendor_id}/: Retrieve a vendor's performance metric
 
-# Historical Performance API
+# Historical Performance API:
 GET /vendor/historical_performance: List historical performance for all vendors.
 
 GET /vendor/historical_performance/{id}/: Retrieve historical performance for a specific vendor.
 
 # Update Acknowledgment Endpoint:
 ● While not explicitly detailed in the previous sections, consider an endpoint like
-POST /api/purchase_orders/{po_id}/acknowledge for vendors to acknowledge POs.
+POST /api/acknowledge_purchase_oder/ for vendors to acknowledge POs.
 
-● This endpoint will update acknowledgment_date and trigger the recalculationof average_response_time
+● This endpoint will update acknowledgment_date and trigger the recalculation of average_response_time
 
-# Running Tests
+# Running Tests:
 Run the test suite:
 python manage.py test
