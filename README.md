@@ -13,10 +13,10 @@ Python (version 3.10.8)
 Django (version 4.2.7)
 Installation
 # 1. Clone the repository:
-bash:
+command prompt:
 git clone https://github.com/ManjulaJatavath/Vendor-Management-system.git
 
-cd project-directory (vendor-management-system-django
+cd project-directory vendor_management_system-
 
 # 2.Create a virtual environment:
 python -m venv venv
@@ -74,6 +74,6 @@ GET /vendor/historical_performance/{id}/: Retrieve historical performance for a 
 POST /api/purchase_orders/{po_id}/acknowledge for vendors to acknowledge POs.
 ● This endpoint will update acknowledgment_date and trigger the recalculationof average_response_time
 
-Running Tests
+# Running Tests
 Run the test suite:
 python manage.py test
