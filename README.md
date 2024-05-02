@@ -13,16 +13,15 @@ This system will handle vendor profiles, track purchase orders, and calculate ve
 Python (version 3.10.8)
 Django (version 4.2.7)
 Installation
+
 # 1. Clone the repository:
 command prompt:
 git clone https://github.com/ManjulaJatavath/Vendor-Management-system.git
-
 cd project-directory vendor_management_system-
 
 # 2.Create a virtual environment:
 python -m venv venv
 source venv/bin/activate # For Linux/Mac
-
 venv\Scripts\activate # For Windows
 
 # 3.Install dependencies:
@@ -30,8 +29,6 @@ pip install -r requirements.txt
 
 # 4.Database setup:
 python manage.py makemigrations
-
-
 python manage.py migrate
 
 # Usage
