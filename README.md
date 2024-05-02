@@ -29,6 +29,8 @@ pip install -r requirements.txt
 
 # 4.Database setup:
 python manage.py makemigrations
+
+
 python manage.py migrate
 
 # Usage
